@@ -1,0 +1,24 @@
+{
+  "name": "callmelater",
+  "version": "1.0.0",
+  "description": "Building a blog to write about bike adventures",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon server.js"    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincenthw/callmelater.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vincenthw/callmelater/issues"
+  },
+  "homepage": "https://github.com/vincenthw/callmelater#readme",
+  "dependencies": {
+    "express-fileupload": "^1.4.0",
+    "express.js": "^1.0.0",
+    "nodemon": "^2.0.19"
+  }
+}
