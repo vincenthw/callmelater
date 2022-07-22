@@ -17,9 +17,13 @@
   },
   "homepage": "https://github.com/vincenthw/callmelater#readme",
   "dependencies": {
+    "better-sqlite3": "^7.6.2",
     "express-fileupload": "^1.4.0",
     "express.js": "^1.0.0",
+    "md5": "^2.3.0",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.19",
+    "save": "^2.5.0",
     "sqlite3": "^5.0.9"
   }
 }
