@@ -16,8 +16,9 @@ const getUsers = (req, res) => {
 	})
 }
 
-const getUserById = (req, res) => {
-	const id = parseInt(request.params.id)
+const getUserById = (request, response) => {
+	console.log(request.body.id)
+	const id = parseInt(request.body.id)
 
 	pool.query('SELECT * FROM users WHERE id = $1', [id], (error, results) => {
 		if(error){
@@ -28,7 +29,8 @@ const getUserById = (req, res) => {
 
 } 
 
-const createUser = (req, res) => {
+const createUser = (request, response) => {
+	console.log(request.body)
 	const {username, password} = request.body 
 	pool.query('INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *', [username, password], (error, results) =>{
 		if(error) {
@@ -39,7 +41,7 @@ const createUser = (req, res) => {
 }
 
 const updateUser = (request, response) => {
-  const id = parseInt(request.params.id)
+  const id = parseInt(request.body.id)
   const { name, email } = request.body
 
   pool.query(
@@ -55,8 +57,7 @@ const updateUser = (request, response) => {
 }
 
 const deleteUser = (request, response) => {
-  const id = parseInt(request.params.id)
-
+  const id = parseInt(request.body.id)
   pool.query('DELETE FROM users WHERE id = $1', [id], (error, results) => {
     if (error) {
       throw error

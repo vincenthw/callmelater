@@ -1,44 +1,31 @@
-//const path = require('path');
-// const fileupload = require('express-fileupload');
-
 //create express app
-const express = require('express'); 
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+const port = 3000
+const db = require('./queries.js')
 
-var db = require("./js/database.js");
-var app = express();
+app.use(express.json())
+app.use(bodyParser.json())
 
-//server port
-var HTTP_PORT = 8000
-
-//start server 
-app.listen(HTTP_PORT, () => {
-  console.log("server running on port %PORT%".replace("%PORT%", HTTP_PORT))
-});
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
 
 //Root endpoint 
-app.get("/", (req, res, next) => {
-  res.json({"message":"OK"})
+app.get("/", (req, res) => {
+  res.json({info: 'Node.js, Express, and Postgres API'});
 });
 
+app.get('/users', db.getUsers)
+app.get('/users/:id', db.getUserById)
+app.post('/users', db.createUser)
+app.put('/users/:id', db.updateUser)
+app.delete('/users/:id', db.deleteUser)
 
-//get all blogposts from the DB
-app.get("/api/blogpost", (req, res, next) => {
-  var sql = "select * from blogpost";
-  var params = [];
-  db.all(sql, params, (err, rows) => {
-    if(err) {
-      res.status(400).json({"error":err.message});
-      return;
-    } else{
-      res.status(200).json(rows);
-    }
-  });
-
+//start server 
+app.listen(port, () => {
+  console.log("server running on port %PORT%".replace("%PORT%", port))
 });
-
-
-//default for any other request 
-app.use((req, res) => {
-  res.status(404);
-})
-
