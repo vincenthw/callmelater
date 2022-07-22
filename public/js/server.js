@@ -1,37 +1,28 @@
+//const path = require('path');
+// const fileupload = require('express-fileupload');
+
+//create express app
 const express = require('express'); 
-const path = require('path');
-const fileupload = require('express-fileupload');
+const sqlite3 = require('sqlite3')
 
-let initial_path = path.join(__dirname, "public");
+var app = express();
 
-const app = express(); 
+//server port
+var HTTP_PORT = 8000
 
-app.use(express.static(initial_path)); 
-app.use(fileupload());
+//start server 
+app.listen(HTTP_PORT, () => {
+  console.log("server running on port %PORT%".replace(%PORT%, HTTP_PORT))
+});
 
-app.get('/', (req, res) => { 
-  res.sendFile(path.join(initial_path, "home.html"));
-})
+//Root endpoint 
+app.get("/", (req, res, next) => {
+  res.json({"message":"OK"})
+});
 
-app.listen("3000", () => {
-  console.log('listening.....');
-})
 
-app.post('/upload', (req, res) => {
-  let file = req.files.image; 
-  let date = new Date(); 
-  //image name 
-  let imagename = date.getDate() + date.getTime() + file.name;
-  //image upload path 
-  let path = 'public/uploads' + imagename; 
-
-  //create upload 
-  file.mv(path, (err, result) => {
-    if(err){
-      throw errl
-    } else {
-       res.json(`uploads/${imagename}`)
-    }
-  })
+//default for any other request 
+app.use((req, res) => {
+  res.status(404);
 })
 
