@@ -25,7 +25,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 0 5vw;
-    background: rgba(199, 199, 166, 1);
+    background: #000;
     z-index: 9;
 }
 
@@ -39,7 +39,8 @@ body{
     margin-left: 10px;
     text-decoration: none;
     text-transform: capitalize;
-    color: #000;
+    color: #fff;
+    font-weight: 800;
 }
 
 .header{
@@ -93,10 +94,12 @@ body{
 }
 
 .blogs-section {
-    background-color: rgba(199, 199, 166, 1);
+    
 }
 
 .blogs-section{
+    background-color: #fff;
+    color: #000
     width: 100%;
     padding: 50px 5vw;
     display: grid;
@@ -115,6 +118,7 @@ body{
 .blog-overview{
     margin: 10px 0 20px;
     line-height: 30px;
+    color: #000;
 }
 
 .btn.dark{
@@ -136,12 +140,11 @@ textarea::-webkit-scrollbar{
 }
 
 textarea::-webkit-scrollbar-thumb{
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.804);
     border-radius: 10px;
 }
 
 .title,
-
 .article{
     width: 100%;
     min-height: 100px;
@@ -149,7 +152,7 @@ textarea::-webkit-scrollbar-thumb{
     outline: none;
     font-size: 50px;
     font-weight: 600;
-    color: #2d2d2d;
+    color: #fff;
     resize: none;
     border: none;
     padding: 10px;
@@ -158,7 +161,7 @@ textarea::-webkit-scrollbar-thumb{
 
 .title::placeholder,
 .article::placeholder{
-    color: #2d2d2d;
+    color: #fff;
 }
 
 .article{
@@ -177,7 +180,7 @@ textarea::-webkit-scrollbar-thumb{
     left: 0;
     width: 100%;
     height: 60px;
-    background: rgba(199, 199, 166, 1);
+    background: #fff;
     z-index: 9;
     display: flex;
     justify-content: center;

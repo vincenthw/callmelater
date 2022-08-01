@@ -28,7 +28,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 0 5vw;
-    background: #fff;
+    background: #000;
     z-index: 9;
 }
 
@@ -42,7 +42,8 @@ body{
     margin-left: 10px;
     text-decoration: none;
     text-transform: capitalize;
-    color: #000;
+    color: #fff;
+    font-weight: 800;
 }
 
 
@@ -87,12 +88,11 @@ body{
 .input {
     margin: 0 auto;
     position: relative;
-    /* background-color: #FFF; */
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
-    color: #fff;
-    background-color:#000;
+    color: #000;
+    background-color:#fff;
     font-size: 14px;
     height: 100%;
     outline: 0;
@@ -100,4 +100,7 @@ body{
     width: 100%;
     /* margin: 5px; */
     padding: 5px;
+    /* border: #000; */
+    border: .5px solid gray;
+    /* background-color: lightgray; */
 }
