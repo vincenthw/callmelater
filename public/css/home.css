@@ -25,7 +25,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 0 5vw;
-    background: #fff;
+    background: rgba(199, 199, 166, 1);
     z-index: 9;
 }
 
@@ -46,8 +46,11 @@ body{
     margin-top: 60px;
     width: 100%;
     height: calc(100vh - 60px);
-    background: url(../img/header.png);
+    background-image:
+        linear-gradient(black, black),     
+        url(../img/header.png);
     background-size: cover;
+    background-blend-mode: saturation;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,6 +90,10 @@ body{
     color: #000;
     text-decoration: none;
     text-transform: capitalize;
+}
+
+.blogs-section {
+    background-color: rgba(199, 199, 166, 1);
 }
 
 .blogs-section{
@@ -170,7 +177,7 @@ textarea::-webkit-scrollbar-thumb{
     left: 0;
     width: 100%;
     height: 60px;
-    background: #fff;
+    background: rgba(199, 199, 166, 1);
     z-index: 9;
     display: flex;
     justify-content: center;
