@@ -31,7 +31,9 @@ const getUserById = (request, response) => {
 
 const createUser = (request, response) => {
 	console.log(request.body)
-	const {username, password} = request.body 
+	let username = request.body.username;
+	let password = request.body.password;
+	// const {username, password} = request.body 
 	pool.query('INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *', [username, password], (error, results) =>{
 		if(error) {
 			throw error
@@ -65,6 +67,10 @@ const deleteUser = (request, response) => {
     response.status(200).send(`User deleted with ID: ${id}`)
   })
 }
+
+// const loginUser = (request, response) => {
+
+// }
 
 module.exports = {
   getUsers,
