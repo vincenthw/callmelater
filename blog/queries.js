@@ -1,18 +1,25 @@
-//Change to match your local PostgreSQL instance
-const DB_PASSWORD = 'FR@nk3rThaD0g!!'
-const DB_USER = 'me'
-const HOST = 'localhost'
-const DB = 'api'
-const PORT = 5432
+// const Constants = require('./constants')
+
+
+// console.log(Constants.keys);
+// console.log(Constants);
+
+const Constants = {
+    DB_PASSWORD: 'FR@nk3rThaD0g!!',
+    DB_USER: 'me',
+    HOST: 'localhost',
+    DB: 'api',
+    PORT: 5432
+}
 
 
 const Pool = require('pg').Pool
 const pool = new Pool({
-	user: DB_USER,
-	host: HOST,
-	database: DB,
-	password: DB_PASSWORD,
-	port: PORT,
+	user: Constants.DB_USER,
+	host: Constants.HOST,
+	database: Constants.DB,
+	password: Constants.DB_PASSWORD,
+	port: Constants.PORT,
 })
 
 const getUsers = (req, res) => {
@@ -80,6 +87,7 @@ const deleteUser = (request, response) => {
 
 // }
 
+
 module.exports = {
   getUsers,
   getUserById,
@@ -87,7 +95,6 @@ module.exports = {
   updateUser, 
   deleteUser,
 }
-
 
 
 
