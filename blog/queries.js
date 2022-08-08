@@ -1,10 +1,18 @@
+//Change to match your local PostgreSQL instance
+const DB_PASSWORD = 'FR@nk3rThaD0g!!'
+const DB_USER = 'me'
+const HOST = 'localhost'
+const DB = 'api'
+const PORT = 5432
+
+
 const Pool = require('pg').Pool
 const pool = new Pool({
-	user:'postgres',
-	host: 'localhost',
-	database: 'api',
-	password: 'xmas',
-	port: 5432,
+	user: DB_USER,
+	host: HOST,
+	database: DB,
+	password: DB_PASSWORD,
+	port: PORT,
 })
 
 const getUsers = (req, res) => {
@@ -38,7 +46,7 @@ const createUser = (request, response) => {
 		if(error) {
 			throw error
 		}
-		response.status(201).send(`User added with ID: ${results.rows[0].id}`)
+		response.status(201).send(`User added with ID: ${results.rows[0].id} Username: ${username} and Password: ${password}`)
 	})
 }
 
@@ -79,7 +87,6 @@ module.exports = {
   updateUser, 
   deleteUser,
 }
-
 
 
 
