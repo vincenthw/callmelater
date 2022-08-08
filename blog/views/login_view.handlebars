@@ -13,14 +13,8 @@
 </head>
 <body>
 
-    <nav class="navbar">
-        <img src="img/logo.png" class="logo" alt="">
-        <ul class="links-container">
-            <li class="link-item"><a href="index.html" class="link">home</a></li>
-            <li class="link-item"><a href="/editor" class="link">editor</a></li>
-            <li class="link-item"><a href="login.html" class="link">login</a></li>
-        </ul>
-    </nav>   
+    {{> navbar_partial}}
+    
     <form id="login" action="http://localhost:3000/login" method="post">
         <div id="title"> Login </div>
         <div id="input-container">
