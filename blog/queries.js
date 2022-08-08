@@ -1,6 +1,6 @@
 //Change to match your local PostgreSQL instance
-const DB_PASSWORD = 'FR@nk3rThaD0g!!'
-const DB_USER = 'me'
+const DB_PASSWORD = 'xmas'
+const DB_USER = 'postgres'
 const HOST = 'localhost'
 const DB = 'api'
 const PORT = 5432
