@@ -1,9 +1,10 @@
+const DB_PASSWORD = 'FR@nk3rThaD0g!!'
 const Pool = require('pg').Pool
 const pool = new Pool({
 	user:'me',
 	host: 'localhost',
 	database: 'api',
-	password: 'FR@nk3rThaD0g!!',
+	password: DB_PASSWORD,
 	port: 5432,
 })
 
