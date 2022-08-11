@@ -1,25 +1,12 @@
-// const Constants = require('./constants')
-
-
-// console.log(Constants.keys);
-// console.log(Constants);
-
-const Constants = {
-    DB_PASSWORD: 'FR@nk3rThaD0g!!',
-    DB_USER: 'me',
-    HOST: 'localhost',
-    DB: 'api',
-    PORT: 5432
-}
-
+const DB_INFO = require('./constants.js')
 
 const Pool = require('pg').Pool
 const pool = new Pool({
-	user: Constants.DB_USER,
-	host: Constants.HOST,
-	database: Constants.DB,
-	password: Constants.DB_PASSWORD,
-	port: Constants.PORT,
+	user: DB_INFO.Constants.DB_USER,
+	host: DB_INFO.Constants.HOST,
+	database: DB_INFO.Constants.DB,
+	password: DB_INFO.Constants.DB_PASSWORD,
+	port: DB_INFO.Constants.PORT,
 })
 
 const getUsers = (req, res) => {
