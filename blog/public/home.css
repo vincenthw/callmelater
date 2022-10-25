@@ -8,6 +8,7 @@ body{
     width: 100%;
     position: relative;
     font-family: 'poppins', sans-serif;
+    padding-top: 60px;
 }
 
 ::selection{

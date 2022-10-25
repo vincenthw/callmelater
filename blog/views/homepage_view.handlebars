@@ -20,7 +20,7 @@
                 CALL ME
                 <span class="small">later</span>
             </h1>
-            <a href="/editor" class="btn">write a blog</a>
+            {{!-- <a href="/editor" class="btn">write a blog</a> --}}
         </div>
     </header>
     <section class="blogs-section">
@@ -29,13 +29,15 @@
         blog_title = "Mary's Peak Ride"
         blog_overview = "I rode my bicycle up a mountain"
         blog_image = "img\marys.jpg"
-        blog_image_alt = "Two people, two bikes, one mountain"}}
+        blog_image_alt = "Two people, two bikes, one mountain"
+        blog_url="/reader"}}
 
     {{> blogPreview_partial
         blog_title = "C2C Ride"
         blog_overview = "We rode our bicycles at night"
         blog_image = "img\c2c.jpg"
-        blog_image_alt = "Hammocks in a green field"}}
+        blog_image_alt = "Hammocks in a green field"
+        blog_url="reader"}}        
 
     </section>
 

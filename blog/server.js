@@ -33,6 +33,16 @@ app.get('/login', function (req, res) {
   res.status(200).render('login_view');
 })
 
+app.get('/editor', function (req,res){
+  console.log("Rendered Editor Page")
+  res.status(200).render('editor_view');
+})
+
+app.get('/reader',function (req, res) {
+  console.log("Rendered blog reader")
+  res.status(200).render('reader_view');
+})
+
 //Root endpoint 
 app.use(express.static(path.join(__dirname, 'public'))); 
 // Route to Login Page
