@@ -17,8 +17,8 @@ body{
 }
 
 .navbar{
-    width: 100%;
-    height: 60px;
+    width: 100vw;
+    height: 80px;
     position: fixed;
     top: 0;
     left: 0;
@@ -26,10 +26,16 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 0 5vw;
-    background: #000;
+    background: #122C34;
     z-index: 9;
 }
 
+.logo {
+    width: auto;
+    height: 90px;
+    border-radius: 50%;
+    vertical-align: bottom;
+}
 .links-container{
     display: flex;
     list-style: none;
@@ -45,7 +51,7 @@ body{
 }
 
 .header{
-    margin-top: 60px;
+    /* margin-top: 60px; */
     width: 100%;
     height: calc(100vh - 60px);
     background-image:
